@@ -1,0 +1,21 @@
+# Eg. foo_test.ignore.go, credentials.ignore.json, config.ignore.yml
+*.ignore.*
+# Eg. ignore.foo_test.go, ignore.credentials.json, ignore.config.yml
+ignore.*
+
+**/cmd.local/**
+**/cmd.local.**/**
+
+**/tmps/**
+.env
+.env.docker
+.DS_Store
+**/config.yml
+**/config.yaml
+**/config.*.yml
+**/config.*.yaml
+!**/config.example.*
+**/credentials.json
+/dev-scripts
+.idea
+.env
