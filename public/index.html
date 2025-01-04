@@ -7,13 +7,24 @@
 			content="width=device-width, initial-scale=1.0"
 		/>
 		<title>Document</title>
+	</head>
+	<body>
+		<form>
+			<input type="text" />
+			<input type="submit" />
+		</form>
+		<div id="chat"></div>
+
 		<script>
+			// elements
+			const form = document.querySelector('form');
+			const chat = document.querySelector('#chat');
+			// web socket
 			let socket = new WebSocket('ws://localhost:8000/ws');
 			console.log('Attempting websocket connection');
 
 			socket.onopen = () => {
 				console.log('Connection successful');
-				socket.send('hello server');
 			};
 
 			socket.onclose = () => {
@@ -25,9 +36,16 @@
 			};
 
 			socket.onmessage = (event) => {
-				console.log(event.data);
+				chat.innerHTML += `<div>${event.data}</div>`;
 			};
+
+			// event handler
+			function send(e) {
+				e.preventDefault();
+				let message = e.target[0].value;
+				socket.send(message);
+			}
+			form.onsubmit = send;
 		</script>
-	</head>
-	<body></body>
+	</body>
 </html>

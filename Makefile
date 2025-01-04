@@ -1,5 +1,5 @@
-start-server:
-	go run ./server/main.go
+start:
+	go run main.go
 
 .PHONY:
-	start-server
+	start
