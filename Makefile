@@ -1,5 +1,5 @@
 start:
-	go run main.go
+	go run .
 
 .PHONY:
 	start
