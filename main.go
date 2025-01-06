@@ -7,6 +7,7 @@ import (
 
 func main() {
 	hub := newHub()
+	http.HandleFunc("/", homePage)
 	http.HandleFunc("/ws", func(w http.ResponseWriter, r *http.Request) {
 		wsHandler(hub, w, r)
 	})

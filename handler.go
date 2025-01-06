@@ -23,3 +23,7 @@ func wsHandler(hub *hub, w http.ResponseWriter, r *http.Request) {
 	client := newClient(conn, hub)
 	client.read()
 }
+
+func homePage(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "public")
+}
