@@ -11,14 +11,18 @@ Simple chat room written in Golang. I build this project to learn websocket.
 
 1. Install dependencies
 
-`sh
+```sh
+
 go dowload
-`
+
+```
 
 2. start server
 
-`
+```sh
+
 go run *.go
-`
+
+```
 
 3. go to "http://localhost:8000" and enjoy! 
