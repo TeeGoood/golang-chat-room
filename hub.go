@@ -12,7 +12,7 @@ func newHub() *hub {
 
 func (h *hub) boardcast(msg string) {
 	for client := range h.clients {
-		client.send(msg)
+		go client.send(msg)
 	}
 }
 
